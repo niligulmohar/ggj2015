@@ -4,6 +4,7 @@
     <Files>
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" Line="229" Column="1" />
       <File FileName="Assets\PlayerScript.cs" Line="23" Column="3" />
+      <File FileName="Assets\CameraScript.cs" Line="15" Column="74" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
