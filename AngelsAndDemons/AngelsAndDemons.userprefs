@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RotateScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerScript.cs">
     <Files>
-      <File FileName="Assets\RotateScript.cs" Line="12" Column="60" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.js" Line="229" Column="1" />
+      <File FileName="Assets\PlayerScript.cs" Line="23" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
