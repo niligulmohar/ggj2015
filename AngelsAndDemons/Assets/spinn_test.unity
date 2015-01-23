@@ -113,6 +113,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11436624, guid: 25f0c4735eb41f24e9b75081a1b3e779, type: 2}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25f0c4735eb41f24e9b75081a1b3e779, type: 2}
   m_RootGameObject: {fileID: 722926223}
@@ -606,7 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 0}
   turnSpeed: 100
-  moveSpeed: 5
+  moveSpeed: 1
 --- !u!143 &722926225
 CharacterController:
   m_ObjectHideFlags: 0
