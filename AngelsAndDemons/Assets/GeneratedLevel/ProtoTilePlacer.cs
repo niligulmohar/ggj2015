@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TilePlacer : MonoBehaviour {
+public class ProtoTilePlacer : MonoBehaviour {
   public float tileSize = 8;
   public int gridSize = 3;
   public Tile[] availableTiles;
