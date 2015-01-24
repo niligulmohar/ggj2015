@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour {
 
 	private Animator myAnimator;
 
+	public GameObject Damaged;
+
 	// Use this for initialization
 	void Start () {
 		myController = GetComponent<CharacterController>();
@@ -30,5 +32,7 @@ public class PlayerScript : MonoBehaviour {
 			myAnimator.SetBool("walking",true);
 		else
 			myAnimator.SetBool("walking",false);
+
+		Damaged.SetActive(GameManager.Instance.PlayerLife <=1);
 	}
 }

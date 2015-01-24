@@ -49,21 +49,21 @@ public class GameManager : MonoBehaviour {
 
 	public float MaxPlayerLife;
 	private float playerLife_;
-	private float playerLife {
+	public float PlayerLife	 {
 		get {
 			return playerLife_;
 		}
 		set {
 			playerLife_ = value;
-			if (playerLife<=0)
+			if (PlayerLife<=0)
 				EndGame();
-			myCamera.SetLife(playerLife);
+			myCamera.SetLife(PlayerLife);
 		}
 	}
 
 	public float LifeRegen;
 	public void DamagePlayer() {
-		playerLife-=1;
+		PlayerLife-=1;
 	}
 
 	public void EndGame() {
@@ -85,12 +85,12 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Instance = this;
-		playerLife = MaxPlayerLife;
+		PlayerLife = MaxPlayerLife;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		playerLife += LifeRegen*Time.deltaTime;
-		playerLife = Mathf.Min(MaxPlayerLife, playerLife);
+		PlayerLife += LifeRegen*Time.deltaTime;
+		PlayerLife = Mathf.Min(MaxPlayerLife, PlayerLife);
 	}
 }

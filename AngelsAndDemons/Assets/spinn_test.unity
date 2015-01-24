@@ -834,6 +834,7 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   turnSpeed: 100
   moveSpeed: 5
+  Damaged: {fileID: 1281717411}
 --- !u!143 &722926225
 CharacterController:
   m_ObjectHideFlags: 0
