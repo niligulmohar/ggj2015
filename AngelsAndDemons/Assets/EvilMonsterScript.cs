@@ -14,6 +14,12 @@ public class EvilMonsterScript : MonoBehaviour {
 	void Start () {
 		myAnimator = GetComponent<Animator>();
 		myController = GetComponent<CharacterController>();
+
+		if (Random.Range(0.0f,1f)>0.5)
+			WalkDirection = new Vector3(0,0,1);
+		else
+			WalkDirection = new Vector3(1,0,0);
+
 	}
 	
 	// Update is called once per frame

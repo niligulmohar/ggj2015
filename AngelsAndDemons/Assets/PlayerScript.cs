@@ -33,10 +33,15 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
 		myController = GetComponent<CharacterController>();
 		myAnimator = GetComponent<Animator>();
+
+
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (GameManager.Instance.myGameState!= GameManager.GameState.GameRunning)
+			return;
 		//transform.Rotate(transform.up, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
 
 		Vector3 distance = -transform.position;

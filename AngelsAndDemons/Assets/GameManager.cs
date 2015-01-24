@@ -15,6 +15,18 @@ public class GameManager : MonoBehaviour {
 	private int DevilScore_;
 	private int AngelScore_;
 
+	public AudioSource SoundPlayer;
+	public AudioClip StartSound;
+	public AudioClip DevilWinSound;
+	public AudioClip AngelWinSound;
+	public AudioClip HumanWinSound;
+	public AudioClip DeathSound;
+
+	public void PlaySound(AudioClip a) {
+		SoundPlayer.clip = a;
+		SoundPlayer.Play ();
+	}
+
 	public int HumanScore {
 		get {
 			return HumanScore_;
@@ -73,6 +85,9 @@ public class GameManager : MonoBehaviour {
 	public Animator GameGUIAnimator;
 
 	public void EndGame() {
+		if (myGameState!= GameState.GameRunning)
+			return;
+
 		myGameState = GameState.GameWon;
 
 		GameGUIAnimator.SetInteger("gamestate",2);
@@ -86,11 +101,25 @@ public class GameManager : MonoBehaviour {
 		WonSliderDevil.value = DevilScore;
 		WonSliderHuman.value = HumanScore;
 
+		if (maxScore == HumanScore || AngelScore == DevilScore) {
+			PlaySound(HumanWinSound);
+		} else if (maxScore == AngelScore) {
+			PlaySound(AngelWinSound);
+		} else {
+			PlaySound(DevilWinSound);
+		}
 
 		//Application.LoadLevel(0);
 	}
 
+	public void StartGame() {
+		myGameState = GameState.GameRunning;
+		PlaySound(StartSound);
+	}
+
 	public void Death() {
+		if (myGameState!= GameState.GameRunning)
+			return;
 		GameGUIAnimator.SetInteger("gamestate",3);
 		
 		myGameState = GameState.Death;
