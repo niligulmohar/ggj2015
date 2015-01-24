@@ -13,6 +13,16 @@ public class PlayerScript : MonoBehaviour {
 
 	public ParticleSystem Damaged;
 
+	public AudioSource DamagedSound;
+
+	private bool Bleeding;
+
+	public AudioSource Footstep;
+
+	public float FootstepFrequenzy;
+
+	private Vector3 LastFootstep;
+
 	// Use this for initialization
 	void Start () {
 		myController = GetComponent<CharacterController>();
@@ -27,12 +37,24 @@ public class PlayerScript : MonoBehaviour {
 		Vector3 move = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 		myController.SimpleMove(moveSpeed * move );
 
+		// Footstep
+		if ((LastFootstep-transform.position).magnitude > FootstepFrequenzy) {
+			Footstep.Play();
+			LastFootstep = transform.position;
+		}
 
 		if (move.sqrMagnitude > 0.1)
 			myAnimator.SetBool("walking",true);
 		else
 			myAnimator.SetBool("walking",false);
 
-		Damaged.enableEmission = GameManager.Instance.PlayerLife <=1;
+		Bleeding = GameManager.Instance.PlayerLife <=1;
+
+		Damaged.enableEmission = Bleeding;
+		if (!DamagedSound.loop && Bleeding) {
+
+			DamagedSound.Play();
+		}
+		DamagedSound.loop = Bleeding;
 	}
 }
