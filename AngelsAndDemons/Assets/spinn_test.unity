@@ -3518,9 +3518,12 @@ MonoBehaviour:
   - {fileID: 11410110, guid: 87f9427fa21827b42b214978ecaed3a8, type: 2}
   - {fileID: 11410110, guid: e62ef698dd0f96645a89c72c2dd305d0, type: 2}
   - {fileID: 11410110, guid: bac29419daa586a4db15279c1bc7460e, type: 2}
-  pickupSpawns: []
-  trapSpawns: []
-  decorationSpawns: []
+  pickupSpawns:
+  - {fileID: 412880, guid: c81b58120340c476fa30b7377a0a4dc8, type: 2}
+  trapSpawns:
+  - {fileID: 448760, guid: 957cd972fb3e99844919e6063491cc32, type: 2}
+  decorationSpawns:
+  - {fileID: 414674, guid: ad878aad7076440b898b91db86fe5142, type: 2}
 --- !u!4 &1407916563
 Transform:
   m_ObjectHideFlags: 0

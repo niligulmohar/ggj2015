@@ -118,56 +118,114 @@ public class Labyrinth : MonoBehaviour
 
   void PlaceTiles (int[,] tiles) {
     var n = gridSize * 2 + 1;
+    Tile tile;
+    int type;
+    int rotation;
+    float pickupChance;
+    float trapChance;
+    float decorationChance;
     for(int x = 0; x < n / 2; x++){
       for(int y = 0; y < n / 2; y++) {
+        tile = null;
+        type = -1;
+        rotation = 0;
+        pickupChance = 0.5f;
+        trapChance = 0.15f;
+        decorationChance = 0.5f;
         switch(tiles[x,y]){
         case 0:
-          PlaceTile(x,y,4,0);
+          type = 4;
+          rotation = 0;
           break;
         case 1:
-          PlaceTile(x,y,3,0);
+          type = 3;
+          rotation = 0;
           break;
         case 2:
-          PlaceTile(x,y,3,1);
+          type = 3;
+          rotation = 1;
           break;
         case 3:
-          PlaceTile(x,y,1,1);
+          type = 1;
+          rotation = 1;
           break;
         case 4:
-          PlaceTile(x,y,3,2);
+          type = 3;
+          rotation = 2;
           break;
         case 5:
-          PlaceTile(x,y,2,0);
+          type = 2;
+          rotation = 0;
           break;
         case 6:
-          PlaceTile(x,y,1,2);
+          type = 1;
+          rotation = 2;
           break;
         case 7:
-          PlaceTile(x,y,0,2);
+          type = 0;
+          rotation = 2;
           break;
         case 8:
-          PlaceTile(x,y,3,3);
+          type = 3;
+          rotation = 3;
           break;
         case 9:
-          PlaceTile(x,y,1,0);
+          type = 1;
+          rotation = 0;
           break;
         case 10:
-          PlaceTile(x,y,2,1);
+          type = 2;
+          rotation = 1;
           break;
         case 11:
-          PlaceTile(x,y,0,1);
+          type = 0;
+          rotation = 1;
           break;
         case 12:
-          PlaceTile(x,y,1,3);
+          type = 1;
+          rotation = 3;
           break;
         case 13:
-          PlaceTile(x,y,0,0);
+          type = 0;
+          rotation = 0;
           break;
         case 14:
-          PlaceTile(x,y,0,3);
+          type = 0;
+          rotation = 3;
           break;
         case 15:
           break;
+        }
+
+        if (type == 0) {
+          pickupChance = 1;
+        }
+
+        if (x == (int)(n / 4f) && y == (int)(n / 4f)) {
+          pickupChance = 0;
+          trapChance = 0;
+        }
+
+        if (type != -1) {
+          tile = PlaceTile(x, y, type, rotation);
+          foreach (Transform spawn in tile.GetPickupSpawnPoints()) {
+            if (UnityEngine.Random.value < pickupChance) {
+              int pickupType = (int)(UnityEngine.Random.value * pickupSpawns.Length);
+              Instantiate(pickupSpawns[pickupType], spawn.position, Quaternion.identity);
+            }
+          }
+          foreach (Transform spawn in tile.GetTrapSpawnPoints()) {
+            if (UnityEngine.Random.value < trapChance) {
+              int trapType = (int)(UnityEngine.Random.value * pickupSpawns.Length);
+              Instantiate(trapSpawns[trapType], spawn.position, Quaternion.identity);
+            }
+          }
+          foreach (Transform spawn in tile.GetDecorationSpawnPoints()) {
+            if (UnityEngine.Random.value < decorationChance) {
+              int decorationType = (int)(UnityEngine.Random.value * pickupSpawns.Length);
+              Instantiate(decorationSpawns[decorationType], spawn.position, Quaternion.identity);
+            }
+          }
         }
       }
     }
