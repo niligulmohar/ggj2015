@@ -4373,6 +4373,7 @@ MonoBehaviour:
   - {fileID: 448760, guid: 957cd972fb3e99844919e6063491cc32, type: 2}
   decorationSpawns:
   - {fileID: 414674, guid: ad878aad7076440b898b91db86fe5142, type: 2}
+  exitSpawn: {fileID: 466138, guid: d8a775b7d4f9ff44a866f50b6b3dc116, type: 2}
 --- !u!4 &1407916563
 Transform:
   m_ObjectHideFlags: 0
