@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
 		set {
 			playerLife_ = value;
 			if (PlayerLife<=0)
-				EndGame();
+				Death();
 			myCamera.SetLife(PlayerLife);
 		}
 	}
@@ -66,13 +66,38 @@ public class GameManager : MonoBehaviour {
 		PlayerLife-=1;
 	}
 
+	public Slider WonSliderHuman;
+	public Slider WonSliderDevil;
+	public Slider WonSliderAngel;
+
+	public Animator GameGUIAnimator;
+
 	public void EndGame() {
 		myGameState = GameState.GameWon;
-		Application.LoadLevel(0);
+
+		GameGUIAnimator.SetInteger("gamestate",2);
+
+		float maxScore = Mathf.Max(AngelScore, Mathf.Max(DevilScore, HumanScore));
+		WonSliderAngel.maxValue = maxScore;
+		WonSliderDevil.maxValue = maxScore;
+		WonSliderHuman.maxValue = maxScore;
+
+		WonSliderAngel.value = AngelScore;
+		WonSliderDevil.value = DevilScore;
+		WonSliderHuman.value = HumanScore;
+
+
+		//Application.LoadLevel(0);
 	}
 
 	public void Death() {
+		GameGUIAnimator.SetInteger("gamestate",3);
+		
 		myGameState = GameState.Death;
+		//
+	}
+
+	public void Restart() {
 		Application.LoadLevel(0);
 	}
 
@@ -84,6 +109,8 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameGUIAnimator.SetInteger("gamestate",1);
+		
 		Instance = this;
 		PlayerLife = MaxPlayerLife;
 	}

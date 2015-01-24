@@ -29,6 +29,7 @@ GameObject:
   - 65: {fileID: 6548758}
   - 23: {fileID: 2348760}
   - 114: {fileID: 11448758}
+  - 82: {fileID: 8222200}
   m_Layer: 0
   m_Name: EvilTrap
   m_TagString: Untagged
@@ -355,6 +356,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &8222200
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148760}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 56b00ffa24931224a91be24012782c9c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11448758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c5bd18571aea4bb1a3301e4980b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 447362, guid: 0afd0402d54ab4fedbe8b370d69343b0, type: 2}
+  effect: {fileID: 498512, guid: 17532aebafead1d4483351a5d0a7e4af, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

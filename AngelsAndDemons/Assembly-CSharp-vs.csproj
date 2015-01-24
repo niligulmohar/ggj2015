@@ -49,6 +49,7 @@
      <Compile Include="Assets\CameraScript.cs" />
      <Compile Include="Assets\DamagePlayer.cs" />
      <Compile Include="Assets\Effect.cs" />
+     <Compile Include="Assets\EndLevelDoor.cs" />
      <Compile Include="Assets\EvilMonsterScript.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GeneratedLevel\Tile.cs" />
@@ -56,17 +57,9 @@
      <Compile Include="Assets\Pickup.cs" />
      <Compile Include="Assets\PlayerScript.cs" />
      <Compile Include="Assets\RotateScript.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Green/Documents/GitHub/ggj2015/AngelsAndDemons/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{AA905A1F-0EF9-81F7-9D0A-82F5566FB3D9}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
