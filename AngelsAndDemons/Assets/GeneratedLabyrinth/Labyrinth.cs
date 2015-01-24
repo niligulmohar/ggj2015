@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
 
-public class Labyrinth
+public class Labyrinth : MonoBehaviour
 {
+  public Tile[] tiles;
+  private const int n = 7;
   public Labyrinth ()
   {
 
@@ -11,7 +13,7 @@ public class Labyrinth
   public static int testLabyrinth ()
   {
     System.Random rand = new System.Random ();
-    int n = 7;
+
     bool[,] grid = new bool[n, n];
 
     int oddShape = (n / 2) * 2 - 1;
@@ -90,33 +92,60 @@ public class Labyrinth
         tileGrid[x_,y_] = neighbours;
       }
     }
-
-    // Printing code for testing purposes
-    String line = "";
-    for (int i = 0; i < n; i++) {
-
-      for (int j = 0; j < n; j++) {
-        if (grid [i, j]) {
-          line += "1";
-        } else {
-          line += "0";
-        }
-      }
-      line += "\n";
-
-
-    }
-    UnityEngine.Debug.Log (line);
-
-    line = "";
-    for (int x = 0; x < (n / 2); x++) {
-      for (int y = 0; y < (n / 2); y++) {
-        line += tileGrid[x,y].ToString() + " ";
-      }
-      line += "\n";
-
-    }
-    UnityEngine.Debug.Log (line);
-    return 1;
   }
+
+ 	void placeTiles(int[,] tiles){
+		for(int x = 0; x < n / 2; x++;){
+			for(int y = 0; y < n / 2; y++;) {
+				switch(tiles[x,y]){
+				case 0:
+					break;
+				case 1:
+					PlaceTile(x,y,0,0);
+					break;
+				case 2:
+					PlaceTile(x,y,0,0);
+					break;
+				case 3:
+					PlaceTile(x,y,1,0);
+					break;
+				case 4:
+					PlaceTile(x,y,0,2);
+					break;
+				case 5:
+					PlaceTile(x,y,2,1);
+					break;
+				case 6:
+					PlaceTile(x,y,1,1);
+					break;
+				case 7:
+					PlaceTile(x,y,3,0);
+					break;
+				case 8:
+					PlaceTile(x,y,0,3);
+					break;
+				case 9:
+					PlaceTile(x,y,1,3);
+					break;
+				case 10:
+					PlaceTile(x,y,2,0);
+					break;
+				case 11:
+					PlaceTile(x,y,3,3);
+					break;
+				case 12:
+					PlaceTile(x,y,1,2);
+					break;
+				case 13:
+					PlaceTile(x,y,1,2);
+					break;
+				case 14:
+					PlaceTile(x,y,3,2);
+					break;
+				case 15:
+					PlaceTile(x,y,4,0);
+					break;
+				}
+			}
+		}
 }
