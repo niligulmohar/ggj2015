@@ -99,51 +99,51 @@ public class Labyrinth : MonoBehaviour
 			for(int y = 0; y < n / 2; y++;) {
 				switch(tiles[x,y]){
 				case 0:
+					PlaceTile(x,y,4,0);
 					break;
 				case 1:
-					PlaceTile(x,y,0,0);
+					PlaceTile(x,y,3,1);
 					break;
 				case 2:
-					PlaceTile(x,y,0,0);
-					break;
-				case 3:
-					PlaceTile(x,y,1,0);
-					break;
-				case 4:
-					PlaceTile(x,y,0,2);
-					break;
-				case 5:
-					PlaceTile(x,y,2,1);
-					break;
-				case 6:
-					PlaceTile(x,y,1,1);
-					break;
-				case 7:
-					PlaceTile(x,y,3,0);
-					break;
-				case 8:
-					PlaceTile(x,y,0,3);
-					break;
-				case 9:
-					PlaceTile(x,y,1,3);
-					break;
-				case 10:
-					PlaceTile(x,y,2,0);
-					break;
-				case 11:
-					PlaceTile(x,y,3,3);
-					break;
-				case 12:
-					PlaceTile(x,y,1,2);
-					break;
-				case 13:
-					PlaceTile(x,y,1,2);
-					break;
-				case 14:
 					PlaceTile(x,y,3,2);
 					break;
+				case 3:
+					PlaceTile(x,y,1,2);
+					break;
+				case 4:
+					PlaceTile(x,y,3,3);
+					break;
+				case 5:
+					PlaceTile(x,y,2,0);
+					break;
+				case 6:
+					PlaceTile(x,y,1,3);
+					break;
+				case 7:
+					PlaceTile(x,y,0,3);
+					break;
+				case 8:
+					PlaceTile(x,y,3,0);
+					break;
+				case 9:
+					PlaceTile(x,y,1,1);
+					break;
+				case 10:
+					PlaceTile(x,y,2,1);
+					break;
+				case 11:
+					PlaceTile(x,y,1,2);
+					break;
+				case 12:
+					PlaceTile(x,y,1,0);
+					break;
+				case 13:
+					PlaceTile(x,y,0,1);
+					break;
+				case 14:
+					PlaceTile(x,y,0,0);
+					break;
 				case 15:
-					PlaceTile(x,y,4,0);
 					break;
 				}
 			}
