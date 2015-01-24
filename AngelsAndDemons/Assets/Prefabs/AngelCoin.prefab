@@ -1,50 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &112880
+--- !u!1 &162828
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 412880}
-  - 33: {fileID: 3312880}
-  - 23: {fileID: 2312880}
-  - 135: {fileID: 13512880}
-  - 114: {fileID: 11412880}
-  - 82: {fileID: 8234380}
+  - 4: {fileID: 462828}
+  - 33: {fileID: 3362828}
+  - 23: {fileID: 2362828}
+  - 135: {fileID: 13562828}
+  - 114: {fileID: 11462828}
+  - 82: {fileID: 8262828}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: AngelCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &412880
+--- !u!4 &462828
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112880}
+  m_GameObject: {fileID: 162828}
   m_LocalRotation: {x: .707106888, y: 0, z: 0, w: .707106769}
-  m_LocalPosition: {x: 5.94000006, y: 2.54999995, z: 7.59000015}
+  m_LocalPosition: {x: 3.47000003, y: 2.54999995, z: -2.25}
   m_LocalScale: {x: 1, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2312880
+--- !u!23 &2362828
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112880}
+  m_GameObject: {fileID: 162828}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: f046ae0f6106748ed809e3afdbae9546, type: 2}
+  - {fileID: 2100000, guid: 109d632a6acc35242a38012cef0765d7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -52,24 +52,24 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3312880
+--- !u!33 &3362828
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112880}
+  m_GameObject: {fileID: 162828}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &8234380
+--- !u!82 &8262828
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112880}
-  m_Enabled: 0
+  m_GameObject: {fileID: 162828}
+  m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: a43fbc54f074b44ac8a3a2bb05195cad, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -117,27 +117,27 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11412880
+--- !u!114 &11462828
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112880}
+  m_GameObject: {fileID: 162828}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b98ff43a30ce49f1aa5ca9a478b0ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 447362, guid: 0afd0402d54ab4fedbe8b370d69343b0, type: 2}
-  HumanScore: 1
+  HumanScore: 0
   DevilScore: 0
-  AngelScore: 0
---- !u!135 &13512880
+  AngelScore: 1
+--- !u!135 &13562828
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112880}
+  m_GameObject: {fileID: 162828}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -153,6 +153,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 112880}
+  m_RootGameObject: {fileID: 162828}
   m_IsPrefabParent: 1
   m_IsExploded: 1

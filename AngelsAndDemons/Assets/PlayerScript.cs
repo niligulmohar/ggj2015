@@ -9,17 +9,26 @@ public class PlayerScript : MonoBehaviour {
 	public float turnSpeed;
 	public float moveSpeed;
 
+	private Animator myAnimator;
+
 	// Use this for initialization
 	void Start () {
 		myController = GetComponent<CharacterController>();
+		myAnimator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Rotate(transform.up, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+		//transform.Rotate(transform.up, Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
 
-		myController.SimpleMove(transform.forward * moveSpeed * Input.GetAxis("Vertical"));
-		
-	
+		//myController.SimpleMove(transform.forward * moveSpeed * Input.GetAxis("Vertical"));
+		Vector3 move = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+		myController.SimpleMove(moveSpeed * move );
+
+
+		if (move.sqrMagnitude > 0.1)
+			myAnimator.SetBool("walking",true);
+		else
+			myAnimator.SetBool("walking",false);
 	}
 }

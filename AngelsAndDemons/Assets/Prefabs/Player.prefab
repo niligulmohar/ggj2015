@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 0}
   turnSpeed: 100
-  moveSpeed: 5
+  moveSpeed: 9
 --- !u!135 &13536624
 SphereCollider:
   m_ObjectHideFlags: 1

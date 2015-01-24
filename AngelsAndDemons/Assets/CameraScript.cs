@@ -14,4 +14,8 @@ public class CameraScript : MonoBehaviour {
 	void Update () {
 		transform.position = Vector3.Lerp(transform.position, myTarget.position, lerpTime);
 	}
+
+	public void SetLife(float playerLife) {
+
+	}
 }

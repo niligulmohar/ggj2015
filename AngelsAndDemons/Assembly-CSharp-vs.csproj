@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraScript.cs" />
+     <Compile Include="Assets\DamagePlayer.cs" />
      <Compile Include="Assets\Effect.cs" />
+     <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Pickup.cs" />
      <Compile Include="Assets\PlayerScript.cs" />
      <Compile Include="Assets\RotateScript.cs" />
