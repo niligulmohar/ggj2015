@@ -13,8 +13,8 @@ public class Labyrinth : MonoBehaviour
   public Transform[] decorationSpawns;
 
   Tile PlaceTile (int x, int y, int tileIndex, int rotation) {
-    float xPos = ((float)x - (gridSize - 1f) / 2.0f) * tileSize;
-    float yPos = ((float)y - (gridSize - 1f) / 2.0f) * tileSize;
+    float xPos = ((float)x - gridSize / 2) * tileSize;
+    float yPos = ((float)y - gridSize / 2) * tileSize;
     var pos = new Vector3(xPos, 0, yPos);
     var rot = Quaternion.Euler(0, rotation * 90, 0);
     Tile newTile = (Tile)Instantiate(tiles[tileIndex], pos, rot);
