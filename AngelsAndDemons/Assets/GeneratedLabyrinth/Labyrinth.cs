@@ -131,7 +131,7 @@ public class Labyrinth : MonoBehaviour
         rotation = 0;
         pickupChance = 0.5f;
         trapChance = 0.15f;
-        decorationChance = 0.5f;
+        decorationChance = 0.3f;
         switch(tiles[x,y]){
         case 0:
           type = 4;
@@ -216,13 +216,13 @@ public class Labyrinth : MonoBehaviour
           }
           foreach (Transform spawn in tile.GetTrapSpawnPoints()) {
             if (UnityEngine.Random.value < trapChance) {
-              int trapType = (int)(UnityEngine.Random.value * pickupSpawns.Length);
+              int trapType = (int)(UnityEngine.Random.value * trapSpawns.Length);
               Instantiate(trapSpawns[trapType], spawn.position, Quaternion.identity);
             }
           }
           foreach (Transform spawn in tile.GetDecorationSpawnPoints()) {
             if (UnityEngine.Random.value < decorationChance) {
-              int decorationType = (int)(UnityEngine.Random.value * pickupSpawns.Length);
+              int decorationType = (int)(UnityEngine.Random.value * decorationSpawns.Length);
               Instantiate(decorationSpawns[decorationType], spawn.position, Quaternion.identity);
             }
           }

@@ -12,6 +12,9 @@ public class EvilMonsterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		transform.position += new Vector3(0,1,0);
+
 		myAnimator = GetComponent<Animator>();
 		myController = GetComponent<CharacterController>();
 
