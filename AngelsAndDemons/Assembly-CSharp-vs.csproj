@@ -52,8 +52,11 @@
      <Compile Include="Assets\EndLevelDoor.cs" />
      <Compile Include="Assets\EvilMonsterScript.cs" />
      <Compile Include="Assets\GameManager.cs" />
-     <Compile Include="Assets\GeneratedLevel\Tile.cs" />
-     <Compile Include="Assets\GeneratedLevel\TilePlacer.cs" />
+     <Compile Include="Assets\GeneratedLabyrinth\Labyrinth.cs" />
+     <Compile Include="Assets\GeneratedLabyrinth\Tile.cs" />
+     <Compile Include="Assets\GeneratedLabyrinth\TilePlacer.cs" />
+     <Compile Include="Assets\GeneratedLevel\ProtoTile.cs" />
+     <Compile Include="Assets\GeneratedLevel\ProtoTilePlacer.cs" />
      <Compile Include="Assets\Pickup.cs" />
      <Compile Include="Assets\PlayerScript.cs" />
      <Compile Include="Assets\RotateScript.cs" />
