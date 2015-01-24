@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Effect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerScript.cs">
     <Files>
-      <File FileName="Assets\PlayerScript.cs" Line="15" Column="12" />
+      <File FileName="Assets\PlayerScript.cs" Line="37" Column="3" />
       <File FileName="Assets\CameraScript.cs" Line="18" Column="14" />
       <File FileName="Assets\Pickup.cs" Line="5" Column="1" />
-      <File FileName="Assets\GameManager.cs" Line="60" Column="33" />
-      <File FileName="Assets\DamagePlayer.cs" Line="10" Column="39" />
+      <File FileName="Assets\GameManager.cs" Line="52" Column="26" />
+      <File FileName="Assets\DamagePlayer.cs" Line="10" Column="30" />
       <File FileName="Assets\Effect.cs" Line="6" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>

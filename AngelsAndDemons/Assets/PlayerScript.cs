@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour {
 
 	private Animator myAnimator;
 
-	public GameObject Damaged;
+	public ParticleSystem Damaged;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +33,6 @@ public class PlayerScript : MonoBehaviour {
 		else
 			myAnimator.SetBool("walking",false);
 
-		Damaged.SetActive(GameManager.Instance.PlayerLife <=1);
+		Damaged.enableEmission = GameManager.Instance.PlayerLife <=1;
 	}
 }

@@ -49,6 +49,7 @@
      <Compile Include="Assets\CameraScript.cs" />
      <Compile Include="Assets\DamagePlayer.cs" />
      <Compile Include="Assets\Effect.cs" />
+     <Compile Include="Assets\EvilMonsterScript.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GeneratedLevel\Tile.cs" />
      <Compile Include="Assets\GeneratedLevel\TilePlacer.cs" />
