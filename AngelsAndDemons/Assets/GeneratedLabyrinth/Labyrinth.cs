@@ -3,16 +3,28 @@ using UnityEngine;
 
 public class Labyrinth : MonoBehaviour
 {
-  public Tile[] tiles;
-  private const int n = 7;
-  public Labyrinth ()
-  {
+  public float tileSize = 8;
+  public int gridSize = 7;
 
+  public Tile[] tiles;
+
+  public Transform[] pickupSpawns;
+  public Transform[] trapSpawns;
+  public Transform[] decorationSpawns;
+
+  Tile PlaceTile (int x, int y, int tileIndex, int rotation) {
+    float xPos = ((float)x - (gridSize - 1f) / 2.0f) * tileSize;
+    float yPos = ((float)y - (gridSize - 1f) / 2.0f) * tileSize;
+    var pos = new Vector3(xPos, 0, yPos);
+    var rot = Quaternion.Euler(0, rotation * 90, 0);
+    Tile newTile = (Tile)Instantiate(tiles[tileIndex], pos, rot);
+    return newTile;
   }
 
-  public static int testLabyrinth ()
+  public void Awake ()
   {
     System.Random rand = new System.Random ();
+    int n = gridSize * 2 + 1;
 
     bool[,] grid = new bool[n, n];
 
@@ -88,64 +100,76 @@ public class Labyrinth : MonoBehaviour
         if (grid[x + 1,y]) {neighbours += 4;}
         if (grid[x,y + 1]) {neighbours += 2;}
         if (grid[x - 1,y]) {neighbours += 1;}
-        UnityEngine.Debug.Log (x.ToString() + " " + y.ToString ());
         tileGrid[x_,y_] = neighbours;
       }
     }
+
+    // var line = "";
+    // for (int x = 0; x < (n / 2); x++) {
+    //   for (int y = 0; y < (n / 2); y++) {
+    //     line += tileGrid[x,y].ToString() + " ";
+    //   }
+    //   line += "\n";
+    // }
+    // UnityEngine.Debug.Log (line);
+
+    PlaceTiles(tileGrid);
   }
 
- 	void placeTiles(int[,] tiles){
-		for(int x = 0; x < n / 2; x++;){
-			for(int y = 0; y < n / 2; y++;) {
-				switch(tiles[x,y]){
-				case 0:
-					PlaceTile(x,y,4,0);
-					break;
-				case 1:
-					PlaceTile(x,y,3,1);
-					break;
-				case 2:
-					PlaceTile(x,y,3,2);
-					break;
-				case 3:
-					PlaceTile(x,y,1,2);
-					break;
-				case 4:
-					PlaceTile(x,y,3,3);
-					break;
-				case 5:
-					PlaceTile(x,y,2,0);
-					break;
-				case 6:
-					PlaceTile(x,y,1,3);
-					break;
-				case 7:
-					PlaceTile(x,y,0,3);
-					break;
-				case 8:
-					PlaceTile(x,y,3,0);
-					break;
-				case 9:
-					PlaceTile(x,y,1,1);
-					break;
-				case 10:
-					PlaceTile(x,y,2,1);
-					break;
-				case 11:
-					PlaceTile(x,y,1,2);
-					break;
-				case 12:
-					PlaceTile(x,y,1,0);
-					break;
-				case 13:
-					PlaceTile(x,y,0,1);
-					break;
-				case 14:
-					PlaceTile(x,y,0,0);
-					break;
-				case 15:
-					break;
-				}
-			}
-		}
+  void PlaceTiles (int[,] tiles) {
+    var n = gridSize * 2 + 1;
+    for(int x = 0; x < n / 2; x++){
+      for(int y = 0; y < n / 2; y++) {
+        switch(tiles[x,y]){
+        case 0:
+          PlaceTile(x,y,4,0);
+          break;
+        case 1:
+          PlaceTile(x,y,3,0);
+          break;
+        case 2:
+          PlaceTile(x,y,3,1);
+          break;
+        case 3:
+          PlaceTile(x,y,1,1);
+          break;
+        case 4:
+          PlaceTile(x,y,3,2);
+          break;
+        case 5:
+          PlaceTile(x,y,2,0);
+          break;
+        case 6:
+          PlaceTile(x,y,1,2);
+          break;
+        case 7:
+          PlaceTile(x,y,0,2);
+          break;
+        case 8:
+          PlaceTile(x,y,3,3);
+          break;
+        case 9:
+          PlaceTile(x,y,1,0);
+          break;
+        case 10:
+          PlaceTile(x,y,2,1);
+          break;
+        case 11:
+          PlaceTile(x,y,0,1);
+          break;
+        case 12:
+          PlaceTile(x,y,1,3);
+          break;
+        case 13:
+          PlaceTile(x,y,0,0);
+          break;
+        case 14:
+          PlaceTile(x,y,0,3);
+          break;
+        case 15:
+          break;
+        }
+      }
+    }
+  }
 }
