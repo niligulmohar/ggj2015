@@ -3525,7 +3525,7 @@ MonoBehaviour:
   - {fileID: 415232, guid: 8762fba72543bc941b8b678622799ace, type: 2}
   - {fileID: 483506, guid: 40d9e2cddb8d1bc41b38b04766e435b4, type: 2}
   - {fileID: 482944, guid: bbb103cddee8f0d4bb3818b9d37cc0f0, type: 2}
-  - {fileID: 479310, guid: 4596955acacc9e143b7ad81ceb3f883a, type: 2}
+  - {fileID: 462326, guid: c1c914b1a0ecd44d98f80e6c8e866c98, type: 2}
   exitSpawn: {fileID: 466138, guid: d8a775b7d4f9ff44a866f50b6b3dc116, type: 2}
 --- !u!4 &1407916563
 Transform:

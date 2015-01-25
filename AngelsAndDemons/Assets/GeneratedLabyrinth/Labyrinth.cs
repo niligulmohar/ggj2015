@@ -311,7 +311,7 @@ public class Labyrinth : MonoBehaviour
           foreach (Transform spawn in tile.GetDecorationSpawnPoints()) {
             if (UnityEngine.Random.value < decorationProbability) {
               int decorationType = (int)(UnityEngine.Random.value * decorationSpawns.Length);
-              Instantiate(decorationSpawns[decorationType], spawn.position, Quaternion.identity);
+              Instantiate(decorationSpawns[decorationType], spawn.position, Quaternion.Euler(0, 180, 0));
             }
           }
         }
