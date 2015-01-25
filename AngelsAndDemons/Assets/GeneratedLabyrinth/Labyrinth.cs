@@ -13,6 +13,7 @@ public class Labyrinth : MonoBehaviour
   public float baseDecorationProbability = 0.3f;
 
   public Tile[] tiles;
+  public Transform borderTile;
 
   public SpawnOption[] pickupOptions;
   public Transform[] trapSpawns;
@@ -25,8 +26,13 @@ public class Labyrinth : MonoBehaviour
     float yPos = ((float)y - gridSize / 2) * tileSize;
     var pos = new Vector3(xPos, 0, yPos);
     var rot = Quaternion.Euler(0, rotation * 90, 0);
-    Tile newTile = (Tile)Instantiate(tiles[tileIndex], pos, rot);
-    return newTile;
+    if (tileIndex == -1) {
+      Instantiate(borderTile, pos, rot);
+      return null;
+    } else {
+      Tile newTile = (Tile)Instantiate(tiles[tileIndex], pos, rot);
+      return newTile;
+    }
   }
 
   public void Awake ()
@@ -168,8 +174,13 @@ public class Labyrinth : MonoBehaviour
       exitY = exitA;
     }
 
-    for(int x = 0; x < n / 2; x++){
-      for(int y = 0; y < n / 2; y++) {
+    for(int x = -5; x < (n / 2) + 5; x++){
+      for(int y = -2; y < (n / 2) + 4; y++) {
+        if (x < 0 || y < 0 || x >= (n / 2) || y >= (n / 2)) {
+          tile = PlaceTile(x, y, -1, (int)(UnityEngine.Random.value * 4));
+          continue;
+        }
+
         tile = null;
         type = -1;
         rotation = 0;
