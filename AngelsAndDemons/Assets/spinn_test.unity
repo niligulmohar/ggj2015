@@ -3493,6 +3493,7 @@ MonoBehaviour:
   - {fileID: 11410110, guid: 87f9427fa21827b42b214978ecaed3a8, type: 2}
   - {fileID: 11410110, guid: e62ef698dd0f96645a89c72c2dd305d0, type: 2}
   - {fileID: 11410110, guid: bac29419daa586a4db15279c1bc7460e, type: 2}
+  borderTile: {fileID: 467816, guid: 54be776b66a104de786112c46945b580, type: 2}
   pickupOptions:
   - item: {fileID: 412880, guid: c81b58120340c476fa30b7377a0a4dc8, type: 2}
     probability: 1
