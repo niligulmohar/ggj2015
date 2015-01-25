@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EvilMonsterScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameManager.cs">
     <Files>
-      <File FileName="Assets\PlayerScript.cs" Line="36" Column="3" />
-      <File FileName="Assets\GameManager.cs" Line="109" Column="27" />
-      <File FileName="Assets\EvilMonsterScript.cs" Line="16" Column="44" />
-      <File FileName="Assets\GeneratedLabyrinth\Labyrinth.cs" Line="134" Column="31" />
+      <File FileName="Assets\PlayerScript.cs" Line="44" Column="11" />
+      <File FileName="Assets\GameManager.cs" Line="117" Column="43" />
+      <File FileName="Assets\EvilMonsterScript.cs" Line="32" Column="3" />
+      <File FileName="Assets\GeneratedLabyrinth\Labyrinth.cs" Line="134" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

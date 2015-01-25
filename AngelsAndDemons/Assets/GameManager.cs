@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour {
 
 	public CameraScript myCamera;
 
-	public enum GameState {GameWon, Death, GameRunning};
-	public GameState myGameState = GameState.GameRunning;
+	public enum GameState {GameWon, Death, GameRunning, GameStarting};
+	public GameState myGameState = GameState.GameStarting;
 
 	public static GameManager Instance;
 
@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour {
 
 	public void StartGame() {
 		myGameState = GameState.GameRunning;
+		GameGUIAnimator.SetInteger("gamestate",1);
 		PlaySound(StartSound);
 	}
 
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameGUIAnimator.SetInteger("gamestate",1);
+		GameGUIAnimator.SetInteger("gamestate",0);
 		
 		Instance = this;
 		PlayerLife = MaxPlayerLife;

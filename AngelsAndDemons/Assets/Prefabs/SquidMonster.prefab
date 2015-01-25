@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c5bd18571aea4bb1a3301e4980b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 498512, guid: 17532aebafead1d4483351a5d0a7e4af, type: 2}
+  effect: {fileID: 417340, guid: fd3c5176720284643b2e388162a89853, type: 2}
 --- !u!136 &13675826
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -632,7 +632,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 457654, guid: 25f0c4735eb41f24e9b75081a1b3e779, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19857652, guid: 25f0c4735eb41f24e9b75081a1b3e779, type: 2}
       propertyPath: CollisionModule.plane0
@@ -705,6 +705,10 @@ Prefab:
     - target: {fileID: 11457652, guid: 25f0c4735eb41f24e9b75081a1b3e779, type: 2}
       propertyPath: turnSpeed
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 19857652, guid: 25f0c4735eb41f24e9b75081a1b3e779, type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25f0c4735eb41f24e9b75081a1b3e779, type: 2}
@@ -1031,7 +1035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &656260793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1184,7 +1188,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484360, guid: b2066259619510343a97b88140a3a20b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11484358, guid: b2066259619510343a97b88140a3a20b, type: 2}
       propertyPath: myTarget
@@ -1664,7 +1668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1070582592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2405,7 +2409,7 @@ ParticleSystem:
     m_Mesh: {fileID: 0}
     randomDirection: 0
   EmissionModule:
-    enabled: 1
+    enabled: 0
     m_Type: 0
     rate:
       scalar: 50
@@ -3305,19 +3309,25 @@ MonoBehaviour:
   - item: {fileID: 452810, guid: 8be1d13ee40a52d4797bcf88a547825e, type: 2}
     probability: 1
     alignment: 1
+  - item: {fileID: 401276, guid: 957cd972fb3e99844919e6063491cc32, type: 2}
+    probability: 1
+    alignment: -1
+  - item: {fileID: 446178, guid: d15358369bdbebe41a60eb21267a0ffc, type: 2}
+    probability: 1
+    alignment: 1
   - item: {fileID: 495712, guid: 47a3861b860d30c4a99a812be6ef2469, type: 2}
     probability: 1
     alignment: -1
   trapSpawns:
-  - {fileID: 401276, guid: 957cd972fb3e99844919e6063491cc32, type: 2}
-  - {fileID: 480240, guid: 4551d0143d2acd24eb587f80bd84e8c7, type: 2}
   - {fileID: 475814, guid: a89202f8850e0a04a80088ea2c72b985, type: 2}
+  - {fileID: 480240, guid: 4551d0143d2acd24eb587f80bd84e8c7, type: 2}
   decorationSpawns:
   - {fileID: 414674, guid: ad878aad7076440b898b91db86fe5142, type: 2}
   - {fileID: 465698, guid: ec90f8114478eb243975f4b9d3a90560, type: 2}
   - {fileID: 415232, guid: 8762fba72543bc941b8b678622799ace, type: 2}
   - {fileID: 483506, guid: 40d9e2cddb8d1bc41b38b04766e435b4, type: 2}
   - {fileID: 482944, guid: bbb103cddee8f0d4bb3818b9d37cc0f0, type: 2}
+  - {fileID: 479310, guid: 4596955acacc9e143b7ad81ceb3f883a, type: 2}
   exitSpawn: {fileID: 466138, guid: d8a775b7d4f9ff44a866f50b6b3dc116, type: 2}
   basePickupProbability: .300000012
   baseTrapProbability: .150000006
@@ -3476,7 +3486,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -135}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1475645352
@@ -3633,7 +3643,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1531325886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2072973623}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1531325886
@@ -3679,7 +3701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1547334300
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3828,7 +3850,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 300}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1645864409
 MonoBehaviour:
@@ -4505,7 +4527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCamera: {fileID: 1454517234}
-  myGameState: 2
+  myGameState: 3
   SoundPlayer: {fileID: 2072973625}
   StartSound: {fileID: 8300000, guid: 48ced37b97d9bcd4c98dc0c9fffa6a57, type: 3}
   DevilWinSound: {fileID: 8300000, guid: d2a9038dd2a2a7743a10cc6340d4805c, type: 3}
@@ -4749,7 +4771,7 @@ AudioSource:
   m_GameObject: {fileID: 2145560168}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 621bd1ee4ee4e464bb3fb73e1b2945c5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ac27b94db2536474b8d6691a5b679927, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .361999989
   m_Pitch: .479999989

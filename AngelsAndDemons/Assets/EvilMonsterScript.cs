@@ -27,6 +27,8 @@ public class EvilMonsterScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (GameManager.Instance.myGameState!= GameManager.GameState.GameRunning)
+			return;
 
 		Vector3 distance = -transform.position;
 		
