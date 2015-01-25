@@ -1,0 +1,24 @@
+How to play
+- Sightless require three players,  the Human, the Angel and the Devil. The person who plays the Human is blindfolded during the whole game.
+
+- Players compete by collecting points. The game ends when the Human walks into the ladder. When this happens, the player with the most points wins the game.
+
+- Points are gained by collecting coins. Blue holy coins give the Angel and the Human points, while the red holy coins give th Devil and the Human points. Yellow coins only give points to the human, while the Angel-symbol respectivly the Devil-symbol only give points to each being.
+
+- If the Human dies, all players lose and there is no winner. The Human can take one damage, but dies if the Human is damaged during the time of bleeding and heartbeat sound.
+
+- The Human is damaged by crystal traps and monsters.
+
+- Crystal traps is used by the beings to steal points from each other. The Angel can use the blue trap to steal 3 points from The Devil, and red traps can be used by the Devil to steal 3 points from the Angel. The human only gets hurt by the traps.
+
+
+
+Blue coin	+5 The Angel	+3 The Human	 
+Red coin 	+5 The Devil	+3 The Human
+Yellow coin	+3 The Human
+
+Angel symbol	+5 The Angel
+Devil symbol	+5 The Devil
+
+Blue trap	-3 The Devil	+3 The Angel
+Red trap	-3 The Angel	+3 The Devil
