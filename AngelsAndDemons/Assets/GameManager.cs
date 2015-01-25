@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour {
 	public AudioClip HumanWinSound;
 	public AudioClip DeathSound;
 
+	public Image HumanWin;
+	public Image DevilWin;
+	public Image AngelWin;
+
 	public void PlaySound(AudioClip a) {
 		SoundPlayer.clip = a;
 		SoundPlayer.Play ();
@@ -103,9 +107,12 @@ public class GameManager : MonoBehaviour {
 
 		if (maxScore == HumanScore || AngelScore == DevilScore) {
 			PlaySound(HumanWinSound);
+			HumanWin.enabled = true;
 		} else if (maxScore == AngelScore) {
+			AngelWin.enabled = true;
 			PlaySound(AngelWinSound);
 		} else {
+			DevilWin.enabled = true;
 			PlaySound(DevilWinSound);
 		}
 
@@ -143,6 +150,8 @@ public class GameManager : MonoBehaviour {
 		
 		Instance = this;
 		PlayerLife = MaxPlayerLife;
+
+		StartGame();
 	}
 	
 	// Update is called once per frame
