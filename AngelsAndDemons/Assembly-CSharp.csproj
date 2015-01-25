@@ -61,6 +61,7 @@
      <Compile Include="Assets\Pickup.cs" />
      <Compile Include="Assets\PlayerScript.cs" />
      <Compile Include="Assets\RandomDestroy.cs" />
+     <Compile Include="Assets\RandomizeSoundStart.cs" />
      <Compile Include="Assets\RotateScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>

@@ -267,7 +267,8 @@ MonoBehaviour:
   pickupEffect: {fileID: 440952, guid: 328aa535f772bfe41b45177487f3f718, type: 2}
   HumanScore: 0
   DevilScore: 0
-  AngelScore: 1
+  AngelScore: 3
+  rotate: 1
 --- !u!135 &13552806
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -46,6 +46,7 @@ GameObject:
   - 143: {fileID: 14380246}
   - 82: {fileID: 8280246}
   - 95: {fileID: 9510734}
+  - 114: {fileID: 11454204}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -276,7 +277,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: .899999976
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -368,6 +369,17 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11454204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148752af784c95c4a9a9e3937ed789ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11480244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,7 +414,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.60000002
+  m_Radius: 1
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

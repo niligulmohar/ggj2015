@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 465698}
   - 82: {fileID: 8265698}
+  - 114: {fileID: 11469542}
   m_Layer: 0
   m_Name: Ambient1
   m_TagString: Untagged
@@ -44,7 +45,7 @@ AudioSource:
   Mute: 0
   Priority: 10
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 10
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -86,6 +87,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11469542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148752af784c95c4a9a9e3937ed789ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

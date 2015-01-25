@@ -11,6 +11,8 @@ public class Pickup : MonoBehaviour {
 	public int DevilScore;
 	public int AngelScore;
 
+	public bool rotate;
+
   void Awake () {
     initialDelta = Random.value * 360;
   }
@@ -26,10 +28,12 @@ public class Pickup : MonoBehaviour {
 			return;
 		GiveScore();
     Destroy(gameObject);
-    Instantiate(pickupEffect, transform.position, Quaternion.identity);
+		if (pickupEffect!=null)
+	    Instantiate(pickupEffect, transform.position, Quaternion.identity);
   }
 
   void Update () {
-    transform.eulerAngles = new Vector3(90, initialDelta + Time.time * speed, 0);
+		if (rotate)
+ 	   transform.eulerAngles = new Vector3(90, initialDelta + Time.time * speed, 0);
   }
 }

@@ -11,6 +11,7 @@ GameObject:
   - 65: {fileID: 6501280}
   - 114: {fileID: 11401280}
   - 82: {fileID: 8201280}
+  - 114: {fileID: 11459982}
   m_Layer: 0
   m_Name: EvilTrap
   m_TagString: Untagged
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101278}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -.800000012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 401278}
@@ -277,6 +278,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 498512, guid: 17532aebafead1d4483351a5d0a7e4af, type: 2}
+--- !u!114 &11459982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b98ff43a30ce49f1aa5ca9a478b0ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 0}
+  HumanScore: 0
+  DevilScore: 2
+  AngelScore: -2
+  rotate: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

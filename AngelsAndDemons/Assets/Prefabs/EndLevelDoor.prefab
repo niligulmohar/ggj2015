@@ -1021,13 +1021,13 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: ca6e774326d74324cba69052c899e3b7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .648999989
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 15
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

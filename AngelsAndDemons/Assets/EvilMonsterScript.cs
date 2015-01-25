@@ -10,6 +10,8 @@ public class EvilMonsterScript : MonoBehaviour {
 
 	public float WalkSpeed;
 
+
+
 	// Use this for initialization
 	void Start () {
 

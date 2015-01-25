@@ -128,6 +128,8 @@ public class GameManager : MonoBehaviour {
 	public void Death() {
 		if (myGameState!= GameState.GameRunning)
 			return;
+
+		PlaySound (DeathSound);
 		GameGUIAnimator.SetInteger("gamestate",3);
 		
 		myGameState = GameState.Death;
