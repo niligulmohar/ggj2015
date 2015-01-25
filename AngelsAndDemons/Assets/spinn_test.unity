@@ -3470,12 +3470,22 @@ MonoBehaviour:
   - {fileID: 11410110, guid: 87f9427fa21827b42b214978ecaed3a8, type: 2}
   - {fileID: 11410110, guid: e62ef698dd0f96645a89c72c2dd305d0, type: 2}
   - {fileID: 11410110, guid: bac29419daa586a4db15279c1bc7460e, type: 2}
-  pickupSpawns:
-  - {fileID: 412880, guid: c81b58120340c476fa30b7377a0a4dc8, type: 2}
-  - {fileID: 462828, guid: e0e866afd7bbd3d4faf221e0ab32aaf2, type: 2}
-  - {fileID: 490324, guid: d5b86a348de7db64c8825cb66bf2ae5a, type: 2}
-  - {fileID: 452810, guid: 8be1d13ee40a52d4797bcf88a547825e, type: 2}
-  - {fileID: 495712, guid: 47a3861b860d30c4a99a812be6ef2469, type: 2}
+  pickupOptions:
+  - item: {fileID: 412880, guid: c81b58120340c476fa30b7377a0a4dc8, type: 2}
+    probability: 1
+    alignment: 0
+  - item: {fileID: 462828, guid: e0e866afd7bbd3d4faf221e0ab32aaf2, type: 2}
+    probability: 1
+    alignment: 1
+  - item: {fileID: 490324, guid: d5b86a348de7db64c8825cb66bf2ae5a, type: 2}
+    probability: 1
+    alignment: -1
+  - item: {fileID: 452810, guid: 8be1d13ee40a52d4797bcf88a547825e, type: 2}
+    probability: 1
+    alignment: 1
+  - item: {fileID: 495712, guid: 47a3861b860d30c4a99a812be6ef2469, type: 2}
+    probability: 1
+    alignment: -1
   trapSpawns:
   - {fileID: 401276, guid: 957cd972fb3e99844919e6063491cc32, type: 2}
   - {fileID: 480240, guid: 4551d0143d2acd24eb587f80bd84e8c7, type: 2}
@@ -3485,6 +3495,9 @@ MonoBehaviour:
   - {fileID: 415232, guid: 8762fba72543bc941b8b678622799ace, type: 2}
   - {fileID: 483506, guid: 40d9e2cddb8d1bc41b38b04766e435b4, type: 2}
   exitSpawn: {fileID: 466138, guid: d8a775b7d4f9ff44a866f50b6b3dc116, type: 2}
+  basePickupProbability: .300000012
+  baseTrapProbability: .150000006
+  baseDecorationProbability: .300000012
 --- !u!4 &1407916563
 Transform:
   m_ObjectHideFlags: 0

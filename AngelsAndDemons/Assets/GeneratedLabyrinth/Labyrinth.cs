@@ -8,10 +8,14 @@ public class Labyrinth : MonoBehaviour
 
   public Tile[] tiles;
 
-  public Transform[] pickupSpawns;
+  public SpawnOption[] pickupOptions;
   public Transform[] trapSpawns;
   public Transform[] decorationSpawns;
   public Transform exitSpawn;
+
+  public float basePickupProbability = 0.3f;
+  public float baseTrapProbability = 0.15f;
+  public float baseDecorationProbability = 0.3f;
 
   Tile PlaceTile (int x, int y, int tileIndex, int rotation) {
     float xPos = ((float)x - gridSize / 2) * tileSize;
@@ -124,9 +128,23 @@ public class Labyrinth : MonoBehaviour
     int rotation;
     int exitX;
     int exitY;
-    float pickupChance;
-    float trapChance;
-    float decorationChance;
+    float pickupProbability;
+    float trapProbability;
+    float decorationProbability;
+
+    float[] pickupProbabilityThresholds = new float[pickupOptions.Length];
+    float pickupProbabilitySum = 0;
+
+    for (int i = 0; i < pickupOptions.Length; i++) {
+      pickupProbabilitySum += pickupOptions[i].probability;
+    }
+
+    float threshold = 0;
+    for (int i = 0; i < pickupOptions.Length; i++) {
+      threshold += pickupOptions[i].probability * 1 / pickupProbabilitySum;
+      pickupProbabilityThresholds[i] = threshold;
+    }
+
 
     int exitA = (int)(UnityEngine.Random.value * gridSize);
     int exitB;
@@ -149,9 +167,9 @@ public class Labyrinth : MonoBehaviour
         tile = null;
         type = -1;
         rotation = 0;
-        pickupChance = 0.5f;
-        trapChance = 0.15f;
-        decorationChance = 0.3f;
+        pickupProbability = basePickupProbability;
+        trapProbability = baseTrapProbability;
+        decorationProbability = baseDecorationProbability;
         switch(tiles[x,y]){
         case 0:
           type = 4;
@@ -218,18 +236,18 @@ public class Labyrinth : MonoBehaviour
         }
 
         if (type == 0) {
-          pickupChance = 1;
+          pickupProbability = 1;
         }
 
         // Center of the maze, where the player starts
         if (x == (int)(n / 4f) && y == (int)(n / 4f)) {
-          pickupChance = 0;
-          trapChance = 0;
+          pickupProbability = 0;
+          trapProbability = 0;
         }
 
         if (x == exitX && y == exitY) {
-          pickupChance = 0;
-          trapChance = 0;
+          pickupProbability = 0;
+          trapProbability = 0;
 
           float xPos = ((float)x - gridSize / 2) * tileSize;
           float yPos = ((float)y - gridSize / 2) * tileSize;
@@ -240,19 +258,25 @@ public class Labyrinth : MonoBehaviour
         if (type != -1) {
           tile = PlaceTile(x, y, type, rotation);
           foreach (Transform spawn in tile.GetPickupSpawnPoints()) {
-            if (UnityEngine.Random.value < pickupChance) {
-              int pickupType = (int)(UnityEngine.Random.value * pickupSpawns.Length);
-              Instantiate(pickupSpawns[pickupType], spawn.position, Quaternion.identity);
+            if (UnityEngine.Random.value < pickupProbability) {
+              float pickupType = UnityEngine.Random.value;
+              int i;
+              for (i = 0; i < pickupOptions.Length; i++) {
+                if (pickupType < pickupProbabilityThresholds[i]) {
+                  break;
+                }
+              }
+              Instantiate(pickupOptions[i].item, spawn.position, Quaternion.identity);
             }
           }
           foreach (Transform spawn in tile.GetTrapSpawnPoints()) {
-            if (UnityEngine.Random.value < trapChance) {
+            if (UnityEngine.Random.value < trapProbability) {
               int trapType = (int)(UnityEngine.Random.value * trapSpawns.Length);
               Instantiate(trapSpawns[trapType], spawn.position, Quaternion.identity);
             }
           }
           foreach (Transform spawn in tile.GetDecorationSpawnPoints()) {
-            if (UnityEngine.Random.value < decorationChance) {
+            if (UnityEngine.Random.value < decorationProbability) {
               int decorationType = (int)(UnityEngine.Random.value * decorationSpawns.Length);
               Instantiate(decorationSpawns[decorationType], spawn.position, Quaternion.identity);
             }
