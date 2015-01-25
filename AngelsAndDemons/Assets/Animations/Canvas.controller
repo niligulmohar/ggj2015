@@ -101,6 +101,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110247272
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: GUIStart
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: ba77c935fdc6ffb4db992b5e9d9d3f75, type: 2}
+  m_ParentStateMachine: {fileID: 110744622}
+  m_Position: {x: 155, y: 245, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110280798
 State:
   m_ObjectHideFlags: 3
@@ -143,24 +158,25 @@ StateMachine:
   - {fileID: 110244622}
   - {fileID: 110280798}
   - {fileID: 110290838}
+  - {fileID: 110247272}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
-    data:
-      first: {fileID: 110290838}
-      second: []
-    data:
-      first: {fileID: 110280798}
-      second: []
-    data:
-      first: {fileID: 110244622}
-      second: []
     data:
       first: {fileID: 0}
       second:
       - {fileID: 110171508}
       - {fileID: 110165128}
       - {fileID: 110101746}
+    data:
+      first: {fileID: 110244622}
+      second: []
+    data:
+      first: {fileID: 110280798}
+      second: []
+    data:
+      first: {fileID: 110290838}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
