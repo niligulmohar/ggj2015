@@ -715,6 +715,76 @@ Prefab:
   m_RootGameObject: {fileID: 722926223}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &482071670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 482071671}
+  - 33: {fileID: 482071674}
+  - 64: {fileID: 482071673}
+  - 23: {fileID: 482071672}
+  m_Layer: 0
+  m_Name: FadeOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &482071671
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482071670}
+  m_LocalRotation: {x: -.400947005, y: 0, z: 0, w: .916101336}
+  m_LocalPosition: {x: 0, y: 8.30000019, z: -8.98999977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1454517235}
+  m_RootOrder: 1
+--- !u!23 &482071672
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482071670}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!64 &482071673
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482071670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &482071674
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482071670}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &503386917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,7 +3486,7 @@ MonoBehaviour:
   neutralPickupFactor: .660000026
   basePickupProbability: .300000012
   baseTrapProbability: .100000001
-  baseDecorationProbability: .400000006
+  baseDecorationProbability: .300000012
   tiles:
   - {fileID: 11410110, guid: 8e206597c5554794eb5a65a47badf62c, type: 2}
   - {fileID: 11410110, guid: 29c2997886a80e2498ae5a51512df164, type: 2}
@@ -3543,6 +3613,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1454517235}
   - 114: {fileID: 1454517234}
+  - 95: {fileID: 1454517236}
   m_Layer: 0
   m_Name: CameraSystem
   m_TagString: Untagged
@@ -3575,8 +3646,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 953754806}
+  - {fileID: 482071671}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!95 &1454517236
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1454517233}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 702f6201dcfbac94d82855b1fc2d0a76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1475645350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4018,7 +4105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1645864408
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4778,7 +4865,7 @@ MonoBehaviour:
   StartSound: {fileID: 8300000, guid: 48ced37b97d9bcd4c98dc0c9fffa6a57, type: 3}
   DevilWinSound: {fileID: 8300000, guid: d2a9038dd2a2a7743a10cc6340d4805c, type: 3}
   AngelWinSound: {fileID: 8300000, guid: 0f220b70c2dce2f439c51e2497b96c8b, type: 3}
-  HumanWinSound: {fileID: 8300000, guid: f91b916302e513341a9ba6f467f78f39, type: 3}
+  HumanWinSound: {fileID: 8300000, guid: e227cc9913c2c934180ca696b65ab182, type: 3}
   DeathSound: {fileID: 8300000, guid: 17878484f98f2e742bebb47763406aa2, type: 3}
   HumanWin: {fileID: 2004181823}
   DevilWin: {fileID: 1543566636}

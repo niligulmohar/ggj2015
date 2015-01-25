@@ -291,8 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 0}
   HumanScore: 0
-  DevilScore: 2
-  AngelScore: -2
+  DevilScore: 3
+  AngelScore: -3
   rotate: 0
 --- !u!1001 &100100000
 Prefab:
