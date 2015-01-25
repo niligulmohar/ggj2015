@@ -6,6 +6,12 @@ public class Labyrinth : MonoBehaviour
   public float tileSize = 8;
   public int gridSize = 7;
 
+  public float neutralPickupFactor = 1;
+
+  public float basePickupProbability = 0.3f;
+  public float baseTrapProbability = 0.15f;
+  public float baseDecorationProbability = 0.3f;
+
   public Tile[] tiles;
 
   public SpawnOption[] pickupOptions;
@@ -13,9 +19,6 @@ public class Labyrinth : MonoBehaviour
   public Transform[] decorationSpawns;
   public Transform exitSpawn;
 
-  public float basePickupProbability = 0.3f;
-  public float baseTrapProbability = 0.15f;
-  public float baseDecorationProbability = 0.3f;
 
   Tile PlaceTile (int x, int y, int tileIndex, int rotation) {
     float xPos = ((float)x - gridSize / 2) * tileSize;
@@ -134,6 +137,9 @@ public class Labyrinth : MonoBehaviour
 
     float[] pickupProbabilityThresholds = new float[pickupOptions.Length];
     float pickupProbabilitySum = 0;
+    float accumulatedAlignment = 0;
+    int alignedPickups = 0;
+    int neutralPickups = 0;
 
     for (int i = 0; i < pickupOptions.Length; i++) {
       pickupProbabilitySum += pickupOptions[i].probability;
@@ -259,12 +265,28 @@ public class Labyrinth : MonoBehaviour
           tile = PlaceTile(x, y, type, rotation);
           foreach (Transform spawn in tile.GetPickupSpawnPoints()) {
             if (UnityEngine.Random.value < pickupProbability) {
-              float pickupType = UnityEngine.Random.value;
+              // float targetNeutralPickups = alignedPickups * neutralPickupFactor;
               int i;
-              for (i = 0; i < pickupOptions.Length; i++) {
-                if (pickupType < pickupProbabilityThresholds[i]) {
+              float alignment;
+              while (true) {
+                float pickupType = UnityEngine.Random.value;
+                for (i = 0; i < pickupOptions.Length; i++) {
+                  if (pickupType <= pickupProbabilityThresholds[i]) {
+                    break;
+                  }
+                }
+                alignment = pickupOptions[i].alignment;
+                float newAccumulatedAlignment = accumulatedAlignment + alignment;
+                float newPickupDiff = (float)alignedPickups * neutralPickupFactor - (float)neutralPickups + (alignment == 0 ? -1f : neutralPickupFactor);
+                if (Mathf.Abs(newAccumulatedAlignment) < 2 && Mathf.Abs(newPickupDiff) < 2) {
                   break;
                 }
+              }
+              accumulatedAlignment += alignment;
+              if (alignment != 0) {
+                alignedPickups++;
+              } else {
+                neutralPickups++;
               }
               Instantiate(pickupOptions[i].item, spawn.position, Quaternion.identity);
             }
@@ -284,5 +306,7 @@ public class Labyrinth : MonoBehaviour
         }
       }
     }
+    Debug.Log(String.Format("Accumulated alignment diff: {0}; Angel/devil pickups: {1}; Human pickups: {2}",
+                            accumulatedAlignment, alignedPickups, neutralPickups));
   }
 }
