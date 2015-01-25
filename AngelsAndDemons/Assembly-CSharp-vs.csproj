@@ -53,6 +53,7 @@
      <Compile Include="Assets\EvilMonsterScript.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GeneratedLabyrinth\Labyrinth.cs" />
+     <Compile Include="Assets\GeneratedLabyrinth\SpawnOption.cs" />
      <Compile Include="Assets\GeneratedLabyrinth\Tile.cs" />
      <Compile Include="Assets\GeneratedLabyrinth\TilePlacer.cs" />
      <Compile Include="Assets\GeneratedLevel\ProtoTile.cs" />
